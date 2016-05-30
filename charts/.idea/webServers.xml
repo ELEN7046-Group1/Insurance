@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="39b13b7e-325b-46a0-a7b9-cc40189d46cd" name="GoogleCloudWindows" url="http://104.197.190.158:8080">
+        <fileTransfer anonymous="true" host="104.197.190.158" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

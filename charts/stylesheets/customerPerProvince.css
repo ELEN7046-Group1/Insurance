@@ -1,0 +1,117 @@
+﻿.g_main {
+    pointer-events: all;
+}
+
+.svgMain {
+    width: 500px;
+    height: 400px;
+    
+}
+
+.divMain {
+    width: 500px;
+    height: 400px;
+}
+
+@keyframes mouseOver {
+   
+    50% {
+        stroke: lightgray;
+        stroke-width: 10px;
+    }
+}
+.toolTip{
+    font-family: Arial;
+    font-size: 12pt;
+    color: white;
+    font-weight: bold;
+
+}
+
+.high {
+    fill: #bd0026;
+    fill-opacity: 1;
+    stroke: #000;
+    stroke-opacity: 0.5;
+    stroke-width: 1;
+    animation-duration: 0.5s;
+}
+
+    .high:hover {
+        animation-name: mouseOver;
+    }
+
+    .high:visited {
+        animation-name: mouseOver;
+    }
+
+
+.medium-high {
+    fill: #f03b20;
+    fill-opacity: 1;
+    stroke: #000;
+    stroke-opacity: 0.5;
+    stroke-width: 1;
+    animation-duration: 0.5s;
+}
+
+    .medium-high:hover {
+        animation-name: mouseOver;
+    }
+
+.medium {
+    fill: #fd8d3c;
+    fill-opacity: 1;
+    stroke: #000;
+    stroke-opacity: 0.5;
+    stroke-width: 1;
+    animation-duration: 0.5s;
+}
+
+    .medium:hover {
+        animation-name: mouseOver;
+    }
+
+.medium-low {
+    fill: #fecc5c;
+    fill-opacity: 1;
+    stroke: #000;
+    stroke-opacity: 0.5;
+    stroke-width: 1;
+    animation-duration: 0.5s;
+}
+
+    .medium-low:hover {
+        animation-name: mouseOver;
+    }
+
+.low {
+    fill: #ffffb2;
+    fill-opacity: 1;
+    stroke: #000;
+    stroke-opacity: 0.5;
+    stroke-width: 1;
+    animation-duration: 0.5s;
+}
+
+    .low:hover {
+        animation-name: mouseOver;
+    }
+
+.mouseOver {
+    fill: ActiveBorder;
+}
+
+.lesotho {
+    fill: #ffffff;
+    fill-opacity: 1;
+    stroke: #000;
+    stroke-opacity: 0.5;
+    stroke-width: 1;
+}
+
+.textheader {
+    font-family: Arial;
+    font-size: 20px;
+    padding: 10px, 10px, 10px, 10px;
+}
