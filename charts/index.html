@@ -13,9 +13,22 @@
 
 </head>
 <body>
+<table>
+    <tr>
+        <td><label id="mainLbl" class="mainLbl">Customers by province heatmap</label></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            <div id="svgcontainer" class="svgcontainer"/>
+        </td>
+        <td>
+            <div id="heatmapcontainer" class="heatmapcontainer"></div>
+        </td>
+    </tr>
+</table>
 
-<label id="mainLbl" class="textheader">Customers by province heatmap</label>
-<div id="svgcontainer" class="divMain"/>
+
 <script type="text/javascript">createHeatMap(0, 0);</script>
 
 </body>

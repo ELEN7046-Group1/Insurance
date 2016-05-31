@@ -2,104 +2,47 @@
     pointer-events: all;
 }
 
-.svgMain {
+.svgcontainer {
     width: 500px;
     height: 400px;
-    
 }
 
 .divMain {
     width: 500px;
     height: 400px;
 }
+.heatmapcontainer
+{
+    width: 80px;
+}
 
 @keyframes mouseOver {
-   
+
     50% {
-        stroke: lightgray;
-        stroke-width: 10px;
+        stroke: white;
+        stroke-width: 5px;
+        stroke-opacity: 0.5;
     }
 }
-.toolTip{
+
+.toolTip {
     font-family: Arial;
     font-size: 12pt;
     color: white;
     font-weight: bold;
-
 }
 
-.high {
+.province {
     fill: #bd0026;
     fill-opacity: 1;
-    stroke: #000;
+    stroke: white;
     stroke-opacity: 0.5;
     stroke-width: 1;
     animation-duration: 0.5s;
 }
 
-    .high:hover {
-        animation-name: mouseOver;
-    }
-
-    .high:visited {
-        animation-name: mouseOver;
-    }
-
-
-.medium-high {
-    fill: #f03b20;
-    fill-opacity: 1;
-    stroke: #000;
-    stroke-opacity: 0.5;
-    stroke-width: 1;
-    animation-duration: 0.5s;
-}
-
-    .medium-high:hover {
-        animation-name: mouseOver;
-    }
-
-.medium {
-    fill: #fd8d3c;
-    fill-opacity: 1;
-    stroke: #000;
-    stroke-opacity: 0.5;
-    stroke-width: 1;
-    animation-duration: 0.5s;
-}
-
-    .medium:hover {
-        animation-name: mouseOver;
-    }
-
-.medium-low {
-    fill: #fecc5c;
-    fill-opacity: 1;
-    stroke: #000;
-    stroke-opacity: 0.5;
-    stroke-width: 1;
-    animation-duration: 0.5s;
-}
-
-    .medium-low:hover {
-        animation-name: mouseOver;
-    }
-
-.low {
-    fill: #ffffb2;
-    fill-opacity: 1;
-    stroke: #000;
-    stroke-opacity: 0.5;
-    stroke-width: 1;
-    animation-duration: 0.5s;
-}
-
-    .low:hover {
-        animation-name: mouseOver;
-    }
-
-.mouseOver {
-    fill: ActiveBorder;
+.province:hover {
+    animation-name: mouseOver;
 }
 
 .lesotho {
@@ -110,8 +53,15 @@
     stroke-width: 1;
 }
 
-.textheader {
+.mainLbl {
     font-family: Arial;
     font-size: 20px;
-    padding: 10px, 10px, 10px, 10px;
+}
+.scale
+{
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(white, red); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white, red); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white, red); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, red); /* Standard syntax */
 }
