@@ -1,0 +1,12 @@
+{
+  "name": "elen7046",
+  "version": "1.0.0",
+  "description": "Retrieves insurance related data from MySql DB",
+  "author": "group01",
+  "license": "GNU",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "mysql": "^2.10.2"
+  }
+}

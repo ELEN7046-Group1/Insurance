@@ -3,33 +3,40 @@
 <head>
     <title></title>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="stylesheets/customerPerProvince.css" type="text/css"/>
+    <link rel="stylesheet" href="stylesheets/HeatMap.css" type="text/css"/>
     <link rel="stylesheet" href="stylesheets/tipsy.css" type="text/css"/>
     <script src="scripts/d3.js" type="text/javascript"></script>
-    <script src="scripts/d3.min.js" type="text/javascript"></script>
     <script src="scripts/chart-customerPerProvince.js" type="text/javascript"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+    <script src="scripts/chart-claimsPerProvince.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.js"></script>
     <script type="text/javascript" src="scripts/jquery.tipsy.js"></script>
-
 </head>
 <body>
 <table>
     <tr>
-        <td><label id="mainLbl" class="mainLbl">Customers by province heatmap</label></td>
+        <td>
+            <label id="lblCustomer" class="mainLbl">Customers by Province Heat Map</label>
+        </td>
+        <td>
+            <label id="lblCases" class="mainLbl">Claims by Province Heat Map</label>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            <div id="svgcontainer" class="svgcontainer"/>
+            <div id="perCustomerContainer" class="svgcontainer"/>
         </td>
         <td>
-            <div id="heatmapcontainer" class="heatmapcontainer"></div>
+            <div id="perCaseContainer" class="svgcontainer"/>
         </td>
     </tr>
 </table>
-
-
-<script type="text/javascript">createHeatMap(0, 0);</script>
-
+<script type="text/javascript">
+    createCustomerHeatMap();
+    createCasesHeatMap();
+</script>
 </body>
 </html>

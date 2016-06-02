@@ -1,23 +1,27 @@
-﻿function createHeatMap() {
+﻿function createCustomerHeatMap(url) {
+
     var apiCall = "http://104.197.190.158/elen7046/customers/perprovince/";
+
+    $('#lblCustomer').text('Downloading Json');
+
     d3.json(apiCall,
         function (error, data) {
             DocumentType = "text/json";
             if (error) return console.warn(error);
             for (var key in data) {
 
-                var scale = d3.scale.linear().domain([0, 12000]).range(["white", "red"]);
+                var scale = d3.scale.linear().domain([0, 12000]).range(["#e5f5e0", "#149114"]);
 
-                d3.select("#svgcontainer")
+                d3.select("#perCustomerContainer")
                     .append("svg")
-                    .attr("id", "mainSvg")
+                    .attr("id", "customerSvg")
                     .attr("width", 800)
                     .attr("height", 800)
                     .append("g")
-                    .attr("id", "mainGroup")
+                    .attr("id", "customerGroup")
 
                 if (data[key].province == "North West") {
-                    d3.select("#mainGroup")
+                    d3.select("#customerGroup")
                         .append("path")
                         .attr("id", "ZA-NW")
                         .attr("title", "<span class=" + "'toolTip'" + ">North West: " + data[key].count)
@@ -31,7 +35,7 @@
                 }
                 if (data[key].province == "Western Cape") {
 
-                    d3.select("#mainGroup")
+                    d3.select("#customerGroup")
                         .append("path")
                         .attr("id", "ZA-WC")
                         .attr("title", "<span class=" + "'toolTip'" + ">Western Cape: " + data[key].count)
@@ -44,7 +48,7 @@
 
                 }
                 if (data[key].province == "KwaZulu-Natal") {
-                    d3.select("#mainGroup")
+                    d3.select("#customerGroup")
                         .append("path")
                         .attr("id", "ZA-NL")
                         .attr("title", "<span class=" + "'toolTip'" + ">KwaZulu-Natal: " + data[key].count)
@@ -57,7 +61,7 @@
                 }
                 if (data[key].province == "Northern Cape") {
 
-                    d3.select("#mainGroup")
+                    d3.select("#customerGroup")
                         .append("path")
                         .attr("id", "ZA-NC")
                         .attr("title", "<span class=" + "'toolTip'" + ">Northern Cape: " + data[key].count)
@@ -70,7 +74,7 @@
 
                 }
                 if (data[key].province == "Mpumalanga") {
-                    d3.select("#mainGroup")
+                    d3.select("#customerGroup")
                         .append("path")
                         .attr("id", "ZA-MP")
                         .attr("title", "<span class=" + "'toolTip'" + ">Mpumalanga: " + data[key].count)
@@ -83,7 +87,7 @@
 
                 }
                 if (data[key].province == "Limpopo") {
-                    d3.select("#mainGroup")
+                    d3.select("#customerGroup")
                         .append("path")
                         .attr("id", "ZA-LP")
                         .attr("title", "<span class=" + "'toolTip'" + ">Limpopo: " + data[key].count)
@@ -98,7 +102,7 @@
 
                 }
                 if (data[key].province == "Gauteng") {
-                    d3.select("#mainGroup")
+                    d3.select("#customerGroup")
                         .append("path")
                         .attr("id", "ZA-GT")
                         .attr("title", "<span class=" + "'toolTip'" + ">Gauteng: " + data[key].count)
@@ -112,7 +116,7 @@
 
                 }
                 if (data[key].province == "Free State") {
-                    d3.select("#mainGroup")
+                    d3.select("#customerGroup")
                         .append("path")
                         .attr("id", "ZA-FS")
                         .attr("title", "<span class=" + "'toolTip'" + ">Free State: " + data[key].count)
@@ -124,7 +128,7 @@
                     $('#ZA-FS').tipsy({gravity: 'w', html: true});
                 }
                 if (data[key].province == "Eastern Cape") {
-                    d3.select("#mainGroup")
+                    d3.select("#customerGroup")
                         .append("path")
                         .attr("id", "ZA-EC")
                         .attr("title", "<span class=" + "'toolTip'" + ">Eastern Cape: " + data[key].count + "</span>")
@@ -151,6 +155,7 @@
                 }
             }
             ;
+            $('#lblCustomer').text('Customer by Province Heat Map');
         });
 
 }

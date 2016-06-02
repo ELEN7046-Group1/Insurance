@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1fd2f7c5-48be-4a76-96fe-c7db544c301f" name="Google Cloud Website" url="http://104.197.190.158">
+        <fileTransfer anonymous="true" host="104.197.190.158" port="21" rootFolder="/charts/">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="e856edb9-25b1-454b-9969-b21d835ab37f" name="Google Cloud Node" url="http://104.197.190.158">
+        <fileTransfer anonymous="true" host="104.197.190.158" port="21" rootFolder="/node">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

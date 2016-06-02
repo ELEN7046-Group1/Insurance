@@ -36,9 +36,7 @@
     fill: #bd0026;
     fill-opacity: 1;
     stroke: white;
-    stroke-opacity: 0.5;
-    stroke-width: 1;
-    animation-duration: 0.5s;
+    stroke-opacity: 0.5; stroke-width: 1; animation-duration: 0.5s;
 }
 
 .province:hover {
@@ -55,7 +53,7 @@
 
 .mainLbl {
     font-family: Arial;
-    font-size: 20px;
+    font-size: 18px;
 }
 .scale
 {
