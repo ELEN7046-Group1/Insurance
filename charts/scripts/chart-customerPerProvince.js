@@ -1,8 +1,8 @@
-﻿function createCustomerHeatMap(url) {
+﻿function createCustomerHeatMap() {
 
     var apiCall = "http://104.197.190.158/elen7046/customers/perprovince/";
 
-    $('#lblCustomer').text('Downloading Json');
+    $('#lblCustomerByProvince').text('Downloading Json');
 
     d3.json(apiCall,
         function (error, data) {
@@ -10,11 +10,11 @@
             if (error) return console.warn(error);
             for (var key in data) {
                 var scale = d3.scale.linear().domain([0, 12000]).range(["#e5f5e0", "#149114"]);
-                d3.select("#perCustomerContainer")
+                d3.select("#customerByProvince")
                     .append("svg")
                     .attr("id", "customerSvg")
-                    .attr("width", 800)
-                    .attr("height", 800)
+                    .attr("width", 500)
+                    .attr("height", 500)
                     .append("g")
                     .attr("id", "customerGroup")
 
@@ -31,7 +31,8 @@
                     $('#ZA-NW').tipsy({gravity: 'w', html: true});
                 }
                 if (data[key].province == "Western Cape") {
-                    append("path")
+                    d3.select("#customerGroup")
+                    .append("path")
                         .attr("id", "ZA-WC")
                         .attr("title", "<span class=" + "'toolTip'" + ">Western Cape: " + data[key].count)
                         .attr("class", "province")
@@ -150,7 +151,8 @@
                 }
             }
             ;
-            $('#lblCustomer').text('Customer by Province Heat Map');
+            $('#lblCustomerByProvince').text('Customer by Province Heat Map');
+            $('#loaderprovince').hide();
         });
 
 }

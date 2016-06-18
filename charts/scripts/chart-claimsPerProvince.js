@@ -1,20 +1,21 @@
 ﻿function createCasesHeatMap() {
 
     var apiCall = "http://104.197.190.158/elen7046/cases/perprovince/";
-    $('#lblCases').text('Downloading Json');
+    $('#lblIncidentByProvince').text('Downloading Json');
+    //$('#lblIncidentByProvince').className('labelLoad');
     d3.json(apiCall,
         function (error, data) {
             DocumentType = "text/json";
             if (error) return console.warn(error);
             for (var key in data) {
 
-                var scale = d3.scale.linear().domain([0, 1000, 2000]).range(["white", "orange", "red"]);
+                var scale = d3.scale.linear().domain([0, 100000, 250000]).range(["white", "orange", "red"]);
 
-                d3.select("#perCaseContainer")
+                d3.select("#incidentByProvince")
                     .append("svg")
                     .attr("id", "caseSvg")
-                    .attr("width", 800)
-                    .attr("height", 800)
+                    .attr("width", 500)
+                    .attr("height", 500)
                     .append("g")
                     .attr("id", "mainGroup")
 
@@ -139,7 +140,8 @@
                 }
             }
             ;
-            $('#lblCases').text('Claims by Province Heat Map');
+            $('#lblIncidentByProvince').text('Claims by Province Heat Map');
+            $('#loaderincident').hide();
         });
 
 }

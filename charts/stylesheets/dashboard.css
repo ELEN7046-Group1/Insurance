@@ -2,8 +2,13 @@
     pointer-events: all;
 }
 
+.labelFormat{
+    font-family: "Arial Black";
+    font-size: 12pt;
+}
+
 .svgcontainer {
-    width: 500px;
+    width: 400px;
     height: 400px;
 }
 
@@ -51,19 +56,25 @@
     stroke-width: 1;
 }
 
-.mainLbl {
-    font-family: Arial;
-    font-size: 18px;
-}
-.scale
-{
-    background: red; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(white, red); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(white, red); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(white, red); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white, red); /* Standard syntax */
-}
 .link
 {
     background: red;
+}
+.node rect {
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+}
+.link {
+    fill: none;
+    stroke: #024;
+    stroke-opacity: .2;
+}
+.link:hover {
+    stroke: black;
+    stroke-opacity: .5;
+}
+.dashboardSection{
+    width: 600px;
+    font-family: Calibri;
+    font-size: 12pt;
 }

@@ -3,38 +3,44 @@
 <head>
     <title></title>
     <meta charset="utf-8"/>
+    <link href="stylesheets/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/tipsy.css" rel="stylesheet" type="text/css">
     <script src="http://d3js.org/d3.v3.js"></script>
     <script type="text/javascript" src="scripts/sankey.js"></script>
     <script type="text/javascript" src="scripts/chart-sankey.js"></script>
-    <style>
-        body {
-            font-family: sans-serif;
-        }
-        .node rect {
-            fill-opacity: .9;
-            shape-rendering: crispEdges;
-        }
-        .link {
-            fill: none;
-            stroke: #024;
-            stroke-opacity: .2;
-        }
-        .link:hover {
-            stroke-opacity: .5;
-        }
-    </style>
+    <script type="text/javascript" src="scripts/chart-customerPerProvince.js"></script>
+    <script type="text/javascript" src="scripts/chart-claimsPerProvince.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="scripts/jquery.tipsy.js"></script>
 </head>
 <body>
 <table>
     <tr>
-        <td style="column-span: 2">
-            <div id="sankeyChart"/>
+        <td colspan="2">
+            <label id="lblCaseFlow" class="labelFormat"/>
         </td>
     </tr>
-</table>
+    <tr>
+        <td colspan="2">
+            <div id="sankeyChart" class="dashboardSection"><img id="loaderSankey" src="images/loader.gif" style="vertical-align: middle;horizontal-align: middle; visibility: visible" /></div>
+        </td>
+    </tr>
+    <tr>
+        <table>
+            <tr>
+                <td><label id="lblIncidentByProvince" class="labelFormat"/></td>
+                <td><label id="lblCustomerByProvince" class="labelFormat"/></td>
+            </tr>
+            <tr>
+                <td> <div id="customerByProvince" class="dashboardSection"><img id="loaderprovince" src="images/loader.gif" style="vertical-align: top;horizontal-align: left; visibility: visible" /></div></td>
+                <td> <div id="incidentByProvince"  class="dashboardSection"><img id="loaderincident" src="images/loader.gif" style="vertical-align: top;horizontal-align: left; visibility: visible" /></div></td>
+            </tr>
+        </table>
+    </tr>
+       </table>
 <script type="text/javascript">
-   //createCustomerHeatMap();
-   //createCasesHeatMap();
+    createCustomerHeatMap();
+   createCasesHeatMap();
     createSankey();
 </script>
 </body>

@@ -1,7 +1,10 @@
 function createSankey(){
     var units = "Incidents";
 
-    var scale = d3.scale.linear().domain([0, 1000000]).range(["red", "#00ff00"]);
+    var scale = d3.scale.linear().domain([0,5000, 10000, 100000, 200000, 250000, 300000, 350000, 400000, 450000, 500000, 550000, 600000, 650000, 700000, 750000, 800000, 850000, 900000, 910000, 950000]).range(["#303F9F", "#3F51B5", "#448AFF", "#E64A19","#03A9F4", "#4CAF50", "#00BCD4", "#00BCD4", "#FF4081", "#009688", "#CDDC39", "#D32F2F", "#B6B6B6", "#607D8B", "#303F9F", "#8BC34A", "#FFA000", "#CDDC39"  ]);
+
+    $('#lblCaseFlow').text('Creating case status flow diagram, please wait!');
+
 
 var margin = {top: 10, right: 10, bottom: 10, left: 10},
     width = 1024 - margin.left - margin.right,
@@ -57,7 +60,8 @@ var path = sankey.link();
             .text(function(d) {
                 return d.source.name + " → " +
                     d.target.name + "\n" + format(d.value); });
-
+        $('#lblCaseFlow').text('Case Status Flow');
+       $('#loaderSankey').hide();
 // add in the nodes
         var node = svg.append("g").selectAll(".node")
             .data(graph.nodes)
@@ -79,8 +83,8 @@ var path = sankey.link();
             .style("fill",function (d) {
                 return scale(d.value);
             })
-            .style("stroke", function(d) {
-                return d3.rgb(d.color).darker(2); })
+            //.style("stroke", function(d) {
+             //   return d3.rgb(d.color).darker(0.5); })
             .append("title")
             .text(function(d) {
                 return d.name + "\n" + format(d.value); });
@@ -107,6 +111,7 @@ var path = sankey.link();
             sankey.relayout();
             link.attr("d", path);
         }
-        
+
     });
+
 }
