@@ -1,0 +1,11 @@
+.node{
+    font-family: Calibri;
+    font-size: 10pt;
+    background-color: #bd0026;
+}
+.link{
+    font-family: Calibri;
+    font-size: 10pt;
+    background-color: black;
+    opacity: 0.5;
+}

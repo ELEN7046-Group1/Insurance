@@ -40,10 +40,38 @@ function elen7046() {
                     res.send({
                         status: 1, message: 'Failed to retrieve customers per province'
                     });
-
                 }
                 else {
                     res.send(result);
+                }
+                ;
+            });
+        });
+    }
+    this.getCasesSankey = function (res) {
+        connection.acquire(function (err, con) {
+            con.query("SELECT Distinct id as node, id as name from incident_status", function (err, result) {
+                con.release();
+                if (err) {
+                    res.send({
+                        status: 1, message: 'Failed to retrieve headers'
+                    });
+                }
+                else {
+                    connection.acquire(function(err2, con2){
+                        con2.query("SELECT status_old as source, status_new as target, COUNT(status_new) as value FROM incident_audit GROUP BY  1", function (err2, result2){
+                            con2.release();
+                            if(err2){
+                                res.send({
+                                    status: 1, message: 'Failed to retrieve case movement'
+                                });
+                            }
+                            else
+                            {
+                                res.send({nodes: result, links: result2});
+                            }
+                        })
+                    })
                 }
                 ;
             });
