@@ -12,6 +12,13 @@
     <script type="text/javascript" src="scripts/chart-claimsPerProvince.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.js"></script>
     <script type="text/javascript" src="scripts/jquery.tipsy.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $( "#dateFrom" ).datepicker();
+            $( "#dateTo" ).datepicker();
+        });
+    </script>
 </head>
 <body>
 <table>
@@ -41,7 +48,7 @@
 <script type="text/javascript">
     createCustomerHeatMap();
    createCasesHeatMap();
-    createSankey();
+    createSankey("http://104.197.190.158/elen7046/cases/sankey/1998-5-1/2016-5-1")
 </script>
 </body>
 </html>

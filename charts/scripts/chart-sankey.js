@@ -1,4 +1,4 @@
-function createSankey(){
+function createSankey(url){
     var units = "Incidents";
 
     var scale = d3.scale.linear().domain([0,5000, 10000, 100000, 200000, 250000, 300000, 350000, 400000, 450000, 500000, 550000, 600000, 650000, 700000, 750000, 800000, 850000, 900000, 910000, 950000]).range(["#303F9F", "#3F51B5", "#448AFF", "#E64A19","#03A9F4", "#4CAF50", "#00BCD4", "#00BCD4", "#FF4081", "#009688", "#CDDC39", "#D32F2F", "#B6B6B6", "#607D8B", "#303F9F", "#8BC34A", "#FFA000", "#CDDC39"  ]);
@@ -7,8 +7,8 @@ function createSankey(){
 
 
 var margin = {top: 10, right: 10, bottom: 10, left: 10},
-    width = 1024 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    width = 1400 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
 
 var formatNumber = d3.format(",.0f"),    // zero decimal places
     format = function(d) { return formatNumber(d) + " " + units; },
@@ -28,9 +28,17 @@ var sankey = d3.sankey()
     .nodePadding(10)
     .size([width, height]);
 
+    var text = svg.append("text")
+        .attr("x", (width / 2))
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px")
+        .style("text-decoration", "underline")
+        .text("Value vs Date Graph");
+
 var path = sankey.link();
 // load the data
-    d3.json("http://104.197.190.158/elen7046/cases/sankey", function(error, graph) {
+    d3.json(url, function(error, graph) {
         var nodeMap = {};
         graph.nodes.forEach(function(x) { nodeMap[x.name] = x; });
         graph.links = graph.links.map(function(x) {

@@ -78,3 +78,9 @@
     font-family: Calibri;
     font-size: 12pt;
 }
+.calendarPicker {
+    font-family: "Trebuchet MS", "Helvetica", "Arial", "Verdana", "sans-serif";
+    font-size: 62.5%;
+    color: blue;
+    background-color: gray;
+}
